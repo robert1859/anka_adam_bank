@@ -1,0 +1,1 @@
+# anka_adam_bank
