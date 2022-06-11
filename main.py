@@ -20,10 +20,19 @@ def check_user_input(user_input: int, expected_values: list) -> bool:
         return True
     return False
 
+def authentication(user_input_pin, service_menu):
+    if user_input_pin == 123456 or service_menu == 9:
+        return True
+    return False
+
 
 # Main program loop
 while True:
+    user_input_pin = int(input("Enter PIN: "))
     print_main_menu()
     user_input = get_user_input()
     if not check_user_input(user_input, [1,2,3,9]):
+        break
+    if not authentication(user_input_pin, user_input):
+        print("Invalid PIN")
         break
